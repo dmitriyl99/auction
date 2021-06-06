@@ -2,8 +2,10 @@ init: docker-down-clear docker-pull docker-build docker-up api-init
 up: docker-up
 down: docker-down
 restart: down up
+check: lint analyze test
 lint: api-lint
 analyze: api-analyze
+test: api-test
 
 docker-up:
 	docker-compose up -d
@@ -31,3 +33,6 @@ api-lint:
 
 api-analyze:
 	docker-compose run --rm api-php-cli composer psalm
+
+api-test:
+	docker-compose run --rm api-php-cli composer test

@@ -43,6 +43,7 @@
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "lint": "phplint",
+        "test": "phpunit --colors=always",
         "psalm": "psalm"
     }
 }
